@@ -1,0 +1,19 @@
+git remote -v
+
+# Heroku
+# apps
+heroku apps
+
+# Add remote
+git remote add staging git@heroku.com:staging-app-name.git
+
+# Run migrate
+heroku run rake db:migrate --app staging-app-name
+
+# Backup/Restore
+# backup
+heroku pg:backups:url --remote production
+> url
+
+# restore
+heroku pg:backups restore 'url' DATABASE_URL --app staging-app-name
