@@ -17,3 +17,6 @@ heroku pg:backups:url --remote production
 
 # restore
 heroku pg:backups restore 'url' DATABASE_URL --app staging-app-name
+
+# log
+heroku logs -n 500 --remote staging
